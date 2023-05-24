@@ -14,6 +14,22 @@ function createGrid(size) {
   );
 }
 
+// remove cells from a grid for repopulation
+function removeCells(parent) {
+  while (parent.firstElementChild) {
+    parent.removeChild(parent.firstElementChild);
+  }
+}
+
 // grid
 const grid = document.getElementById("grid");
 createGrid(16);
+
+// size slider
+const sizeValue = document.getElementById("size");
+const slider = document.getElementById("size-input");
+slider.addEventListener("change", function () {
+  removeCells(grid);
+  createGrid(this.value);
+  sizeValue.textContent = this.value;
+});
