@@ -21,6 +21,16 @@ function removeCells(parent) {
   }
 }
 
+// generate random color
+function randomColor() {
+  const letters = "1234567890ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * letters.length)];
+  }
+  return color;
+}
+
 // grid
 const grid = document.getElementById("grid");
 createGrid(16);
@@ -32,4 +42,24 @@ slider.addEventListener("change", function () {
   removeCells(grid);
   createGrid(this.value);
   sizeValue.textContent = this.value;
+});
+
+// rgb
+const rgbButton = document.getElementById("rgb");
+rgbButton.addEventListener("click", function () {
+  const children = grid.children;
+  for (i = 0; i < grid.children.length; i++) {
+    children[i].addEventListener("mouseover", function (e) {
+      this.style.backgroundColor = randomColor();
+    });
+  }
+});
+
+// clear
+const clearButton = document.getElementById("clear");
+clearButton.addEventListener("click", function () {
+  const children = grid.children;
+  for (i = 0; i < grid.children.length; i++) {
+    children[i].style.backgroundColor = "white";
+  }
 });
