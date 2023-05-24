@@ -3,14 +3,59 @@
   src: url(Wopper83.ttf);
 }
 
-#grid {
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Wopper83", sans-serif;
+  background-color: gainsboro;
+}
+
+h1 {
+  margin-bottom: 0.5vh;
+  font-size: 2.25rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5vh 0;
+}
+
+#slider {
+  width: 185px;
+}
+
+#btns {
+  width: 225px;
+}
+
+#size {
+  display: inline;
+  font-size: 1rem;
+}
+
+button {
+  padding: 10px;
+  font-family: "Wopper83", sans-serif;
   border: solid black 2px;
+  box-shadow: 3px 3px black;
+  background-color: white;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+#grid {
   display: grid;
   height: 600px;
   width: 600px;
-  background-color: #ffffff;
+  margin: 2vh 0;
+  border: solid black 2px;
+  background-color: white;
 }
 
 .cell {
-  border: solid #000000 0.25px;
+  border: solid black 0.25px;
 }
