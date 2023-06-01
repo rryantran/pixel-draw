@@ -3,7 +3,7 @@ function createGrid(size) {
   for (let i = 0; i < size ** 2; i++) {
     const cell = document.createElement("div");
     cell.className = "cell";
-    cell.addEventListener("mouseover", function (e) {
+    cell.addEventListener("mouseover", function () {
       this.style.backgroundColor = "black";
     });
     grid.appendChild(cell);
