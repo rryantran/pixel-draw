@@ -49,7 +49,7 @@ const rgbButton = document.getElementById("rgb");
 rgbButton.addEventListener("click", function () {
   const children = grid.children;
   for (i = 0; i < grid.children.length; i++) {
-    children[i].addEventListener("mouseover", function (e) {
+    children[i].addEventListener("mouseover", function () {
       this.style.backgroundColor = randomColor();
     });
   }
